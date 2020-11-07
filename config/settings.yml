@@ -1,0 +1,9 @@
+development:
+  clearbit_url: 'https://autocomplete.clearbit.com/v1'
+  ssl: '/usr/lib/ssl/certs/ca-certificates.crt'
+test:
+  clearbit_url: 'https://autocomplete.clearbit.com/v1'
+  ssl: '/usr/lib/ssl/certs/ca-certificates.crt'
+production:
+  clearbit_url: 'https://autocomplete.clearbit.com/v1'
+  ssl: '/usr/lib/ssl/certs/ca-certificates.crt'

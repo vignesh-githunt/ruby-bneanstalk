@@ -1,0 +1,1 @@
+json.partial! "foreign_prospect_mappings/foreign_prospect_mapping", foreign_prospect_mapping: @foreign_prospect_mapping
