@@ -1,2 +1,2 @@
-# ruby-bneanstalk
-ruby
+# testawsebrubyapp
+Testing out Ruby App in Elastic BeanStalk

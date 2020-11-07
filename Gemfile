@@ -1,38 +1,43 @@
-instance_eval File.read("Gemfile.common")
+source 'https://rubygems.org'
 
-# Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-# database
-gem 'mongoid_includes'
+gem 'rails', '3.2.13'
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors'
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'newrelic_rpm'
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
 
-group :test do
-  gem 'database_cleaner', '~> 1.6.1'
-  gem 'shoulda-matchers', '~> 3.1'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
-  # Use RSpec for specs
-  gem 'rspec-rails', '>= 3.5.0'
-
-  # Use Factory Bot for generating random test data
-  gem 'factory_bot_rails', '~> 4.8.2'
+group :production do
+  gem 'mysql2'
 end
 
-group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem 'listen', '>= 3.0.5', '< 3.2'
+group :test, :development do
+  gem 'sqlite3'
 end
 
-gem 'graphql'
-gem 'graphoid', path: 'gems/graphoid'
-gem 'apollo_upload_server', '2.0.0.beta.1'
-gem "activesupport", "~> 5.1"
-gem 'restforce', "~> 5.0.0"
+gem 'jquery-rails'
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'debugger'
