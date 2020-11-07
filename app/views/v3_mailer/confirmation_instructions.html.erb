@@ -1,5 +1,0 @@
-<p>Welcome <%= @email %>!</p>
-
-<p>Someone just sent you an invite to start using Stories. Please confirm your account email through the link below and choose a secure password:</p>
-
-<p><%= link_to 'Confirm my account', "https://#{ActionMailer::Base.default_url_options[:host]}/stories#/confirmation?confirmation_token=#{@token}"%></p>

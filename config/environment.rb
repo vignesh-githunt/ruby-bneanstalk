@@ -1,8 +1,5 @@
-# Load the Rails application.
-require_relative 'application'
+# Load the rails application
+require File.expand_path('../application', __FILE__)
 
-app_environment_variables = Rails.root.join("../shared/config/app_environment_variables.rb")
-load(app_environment_variables) if Rails.env.development? # File.exists?(app_environment_variables)
-
-# Initialize the Rails application.
-Rails.application.initialize!
+# Initialize the rails application
+PreLaunchSignup::Application.initialize!
