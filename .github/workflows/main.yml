@@ -18,15 +18,17 @@ jobs:
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
-        version: 2.6.x
-    - name: Build
+        version: 2.6
+    - name: Build and test
+      env:
+        RAILS_ENV: test
       run: |
-        gem install bundler
+        sudo apt-get -yqq install libsqlite3-dev
         bundle install --jobs 4 --retry 3
-    - name: lint
-      run: bundle exec rubocop
-    - name: rspec
-      run: bundle exec rspec
+        bin/rails db:create
+        bin/rails db:migrate
+        bin/yarn install
+        bundle exec rspec
     - name: Create ZIP deployment package
       run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./  -x  *.git*
            
